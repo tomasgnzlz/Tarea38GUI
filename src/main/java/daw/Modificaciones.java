@@ -18,12 +18,12 @@ public class Modificaciones extends javax.swing.JFrame {
      */
     private Consulta padre;
     private Pacientes paciente;
-    
+
     public Modificaciones(Consulta parent, boolean modal) {
         padre = parent;
         initComponents();
         mostrarDatosEditar();
-        
+
     }
 
     // Este método privado permite cargar los datos en los componentes
@@ -34,7 +34,15 @@ public class Modificaciones extends javax.swing.JFrame {
         // Para ello, obtengo la fila seleccionada y luego el id de esa fila
         int fila = filaSeleccionadaJTable(padre.getJTable());
         // El id de la persona es el valor de la columna cero de esa fila
-        String idPersona = (String) padre.getJTable().getValueAt(fila, 0);
+////////        String idPersona = (String) padre.getJTable().getValueAt(fila, 0);
+        Object valorCelda = padre.getJTable().getValueAt(fila, 0);
+        String idPersona = null;
+        if (valorCelda instanceof String) {
+            idPersona = (String) valorCelda;
+        } else if (valorCelda != null) {
+            idPersona = valorCelda.toString();
+        }
+
         // Guarda la persona seleccionada
         this.paciente = padre.getListaPacientes().getPaciente(idPersona);
         // Muestra datos de la persona que se seleccionó en el jtable
@@ -53,7 +61,7 @@ public class Modificaciones extends javax.swing.JFrame {
             case "AB" ->
                 gruposanuineo.setSelectedIndex(3);
         }
-        
+
         if (this.paciente.getRh().equals("-")) {
             negativo.setSelected(true);
             positivo.setSelected(false);
@@ -61,9 +69,9 @@ public class Modificaciones extends javax.swing.JFrame {
             positivo.setSelected(true);
             negativo.setSelected(false);
         }
-        
+
         donaciones.setValue(this.paciente.getNumeroDonaciones());
-        
+
         nombre.setEditable(false); // No editable
         fecha.setEditable(false); // No editable
 
@@ -126,6 +134,11 @@ public class Modificaciones extends javax.swing.JFrame {
 
         positivo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         positivo.setText("+");
+        positivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                positivoActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Numero de donaciones");
 
@@ -214,6 +227,7 @@ public class Modificaciones extends javax.swing.JFrame {
 
     private void negativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_negativoActionPerformed
         // TODO add your handling code here:
+        positivo.setSelected(false);
     }//GEN-LAST:event_negativoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -225,6 +239,11 @@ public class Modificaciones extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void positivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_positivoActionPerformed
+        // TODO add your handling code here:
+        negativo.setSelected(false);
+    }//GEN-LAST:event_positivoActionPerformed
 
     /**
      * @param args the command line arguments
