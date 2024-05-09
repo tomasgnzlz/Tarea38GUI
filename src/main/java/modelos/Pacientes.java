@@ -31,6 +31,9 @@ public class Pacientes {
         this.numeroDonaciones = numeroDonaciones;
     }
 
+    public Pacientes() {
+    }
+
     // Getters y Setters
     public int getId_paciente() {
         return id_paciente;

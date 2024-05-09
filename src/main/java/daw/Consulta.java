@@ -15,7 +15,7 @@ import modelos.ModeloTablaPacientes;
 
 /**
  *
- * @author Usuario
+ * @author tomas
  */
 public class Consulta extends javax.swing.JFrame {
 
@@ -157,18 +157,16 @@ public class Consulta extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-
-        // TODO add your handling code here:
         // Antes de nada comprobar que se ha selccionado algo
-//        if (jTable1.getSelectedRow() < 0) {
-//            JOptionPane.showMessageDialog(null, "No has seleccionado ningún registro");
-//        } else {
-//            // Muestro la ventana de edición
-//            new Modificaciones(this, true).setVisible(true);
-//            // Una vez termine la ejecución de la ventana Editar
-//            // Llamo a cargar de nuevo los datos en el jTable con los cambios
-//            cargarDatosJTable();
-//        }
+        if (jTable1.getSelectedRow() < 0) {
+            JOptionPane.showMessageDialog(null, "No has seleccionado ningún registro");
+        } else {
+            // Muestro la ventana de edición
+            new Modificaciones(this, true).setVisible(true);
+            // Una vez termine la ejecución de la ventana Editar
+            // Llamo a cargar de nuevo los datos en el jTable con los cambios
+            cargarDatosJTable();
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -188,13 +186,13 @@ public class Consulta extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
