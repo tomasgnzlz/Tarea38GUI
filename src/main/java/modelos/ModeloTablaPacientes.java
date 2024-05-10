@@ -29,5 +29,4 @@ public class ModeloTablaPacientes extends DefaultTableModel {
         // En nuestro caso ninguna celda se edita
         return false;
     }
-
 }

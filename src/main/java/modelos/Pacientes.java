@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class Pacientes {
 
     // Declaración de atributos
-    private int id_paciente;
+    private String id_paciente;
     private String nombre;
     private String fechaNacimiento;
     private String grupoSanguineo;
@@ -22,7 +22,7 @@ public class Pacientes {
     private int numeroDonaciones;
 
     // Constructor
-    public Pacientes(int id_paciente, String nombre, String fechaNacimiento, String grupoSanguineo, String rh, int numeroDonaciones) {
+    public Pacientes(String id_paciente, String nombre, String fechaNacimiento, String grupoSanguineo, String rh, int numeroDonaciones) {
         this.id_paciente = id_paciente;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -35,11 +35,11 @@ public class Pacientes {
     }
 
     // Getters y Setters
-    public int getId_paciente() {
+    public String getId_paciente() {
         return id_paciente;
     }
 
-    public void setId_paciente(int id_paciente) {
+    public void setId_paciente(String id_paciente) {
         this.id_paciente = id_paciente;
     }
 

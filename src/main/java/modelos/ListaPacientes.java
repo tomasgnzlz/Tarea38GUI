@@ -15,11 +15,13 @@ import java.util.List;
  */
 public class ListaPacientes {
 
-    private static List<Pacientes> listaPacientes;
+    private List<Pacientes> listaPacientes;
 
     public ListaPacientes() throws IOException {
         listaPacientes = new ArrayList<>();
         listaPacientes = LecturaEscritura.lecturaFicheroJSON();
+        //listaPacientes.add(new Pacientes(0, "tomas", "ayer", "AB","+", 0));
+
     }
 
     public List<Pacientes> getLista() {
